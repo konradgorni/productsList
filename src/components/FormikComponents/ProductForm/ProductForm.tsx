@@ -42,19 +42,21 @@ function ProductForm({
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const SignupSchema = Yup.object().shape({
-		name: Yup.string().required("Required").max(100, "Name is too long"),
+		name: Yup.string()
+			.required("Name is required")
+			.max(100, "Price can not be higher than 100"),
 		price: Yup.number()
-			.required("Required")
+			.required("Name is required")
 			.min(1, "Price can not be lower than 0")
 			.max(100000, "Price can not be higher than 100000"),
 		quantityInStock: Yup.number()
-			.required("Required")
+			.required("QuantityInStock is required")
 			.min(1, "Quantity can not be lower than 0")
 			.max(100000, "Quantity can not be higher than 100000"),
-		dateOfProduction: Yup.date().required("Required"),
-		category: Yup.string().required("Required"),
+		dateOfProduction: Yup.date().required("DateOfProduction is required"),
+		category: Yup.string().required("Category is required"),
 		description: Yup.string()
-			.required("Required")
+			.required("Description is required")
 			.min(10, "Description is too short")
 			.max(2000, "Description is too long"),
 	});
