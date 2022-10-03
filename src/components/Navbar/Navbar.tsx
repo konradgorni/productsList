@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { StyledNavLink, StyledWrapper } from "./Navbar.styled";
 
 function Navbar() {
 	return (
-		<div>
-			<NavLink to="/products">Products List</NavLink>
-			<NavLink to="/products/add">Product Creator</NavLink>
-		</div>
+		<StyledWrapper>
+			{/* <StyledNavLink to="/products">Products List</StyledNavLink> */}
+			{/* <StyledNavLink to="/products/add">Product Creator</StyledNavLink> */}
+		</StyledWrapper>
 	);
 }
 export default Navbar;
